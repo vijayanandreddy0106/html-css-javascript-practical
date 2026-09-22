@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 118
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 118
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 118
+    </span>
+    <h2 class="page-title">
+     Create a BMI calculator.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <div class="demo-grid">
+      <input class="input" id="a" placeholder="Weight (kg)" type="number" value=""/>
+      <input class="input" id="b" placeholder="Height (cm)" type="number" value=""/>
+     </div>
+     <button class="btn" onclick="run()">
+      Calculate BMI
+     </button>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+const bmi=70/(1.75*1.75);
+console.log(bmi);
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-117.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-119.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   function run() {
+    let w=+a.value,h=+b.value/100;
+    if(w<=0||h<=0) {
+        out.textContent='Enter valid values';
+        return
+    }
+    let bmi=w/(h*h);
+    let cat=bmi<18.5?'Underweight':bmi<25?'Normal':bmi<30?'Overweight':'Obesity';
+    out.textContent=`BMI: ${bmi.toFixed(2)}\n${cat}`
+}
+  </script>
+ </body>
+</html>

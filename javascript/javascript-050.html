@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 50
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 50
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 50
+    </span>
+    <h2 class="page-title">
+     Write a program to check whether a number is a perfect number.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <input class="input" id="a" placeholder="Enter number" type="number" value=""/>
+     <button class="btn" onclick="run()">
+      Run
+     </button>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+let n=28,sum=0;
+for(let i=1;
+i&lt;n;
+i++)if(n%i===0)sum+=i;
+console.log(sum===n);
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-049.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-051.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   function run() {
+    let n=+a.value;
+    if(n<=1) {
+        out.textContent='Not Perfect';
+        return
+    }
+    let s=1;
+    for(let i=2;
+    i<=n/2;
+    i++)if(n%i===0)s+=i;
+    out.textContent=s===n?'Perfect number':'Not a Perfect number'
+}
+  </script>
+ </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 100
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 100
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 100
+    </span>
+    <h2 class="page-title">
+     Create a program using localStorage.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <input class="input" id="a" placeholder="Enter value" type="text" value="Hello"/>
+     <button class="btn" onclick="run()">
+      Save
+     </button>
+     <button class="btn" onclick="readValue()">
+      Read
+     </button>
+     <button class="btn" onclick="clearValue()">
+      Clear
+     </button>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+localStorage.setItem('key','value');
+console.log(localStorage.getItem('key'));
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-099.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-101.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   function run() {
+    localStorage.setItem('practicalValue',a.value);
+    out.textContent='Saved: '+a.value
+}
+function readValue() {
+    out.textContent='Stored: '+(localStorage.getItem('practicalValue')||'Nothing saved')
+}
+function clearValue() {
+    localStorage.removeItem('practicalValue');
+    out.textContent='Storage cleared.'
+}
+  </script>
+ </body>
+</html>

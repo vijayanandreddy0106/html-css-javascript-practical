@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 68
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 68
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 68
+    </span>
+    <h2 class="page-title">
+     Create a program to change CSS styles using JavaScript.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <p class="mini" id="styleMe">
+      Change my style
+     </p>
+     <button class="btn" onclick="run()">
+      Change Style
+     </button>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+const e=document.getElementById('box');
+e.style.color='blue';
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-067.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-069.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   function run() {
+    let e=document.getElementById('styleMe');
+    e.style.color='#174EA6';
+    e.style.fontSize='24px';
+    e.style.fontWeight='bold';
+    out.textContent='CSS changed with JavaScript.'
+}
+  </script>
+ </body>
+</html>

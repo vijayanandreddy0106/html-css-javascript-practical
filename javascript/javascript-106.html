@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 106
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 106
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 106
+    </span>
+    <h2 class="page-title">
+     Create a stopwatch.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <div class="mini big-output" id="sw">
+      00:00.0
+     </div>
+     <button class="btn" onclick="start()">
+      Start
+     </button>
+     <button class="btn" onclick="stop()">
+      Stop
+     </button>
+     <button class="btn" onclick="reset()">
+      Reset
+     </button>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+let start=Date.now();
+console.log(Date.now()-start);
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-105.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-107.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   let timer,startTime=0,elapsed=0;
+function render() {
+    let ms=elapsed+(startTime?Date.now()-startTime:0);
+    document.getElementById('sw').textContent=(ms/1000).toFixed(1)+' s'
+}
+function start() {
+    if(!timer) {
+        startTime=Date.now();
+        timer=setInterval(render,100)
+    }
+}
+function stop() {
+    if(timer) {
+        elapsed+=Date.now()-startTime;
+        clearInterval(timer);
+        timer=null;
+        startTime=0;
+        render()
+    }
+}
+function reset() {
+    clearInterval(timer);
+    timer=null;
+    startTime=0;
+    elapsed=0;
+    render()
+}
+render();
+  </script>
+ </body>
+</html>

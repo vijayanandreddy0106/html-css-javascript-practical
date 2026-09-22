@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 101
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 101
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 101
+    </span>
+    <h2 class="page-title">
+     Create a program using sessionStorage.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <input class="input" id="a" placeholder="Session value" type="text" value="Hello"/>
+     <button class="btn" onclick="run()">
+      Save
+     </button>
+     <button class="btn" onclick="readSession()">
+      Read
+     </button>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+sessionStorage.setItem('key','value');
+console.log(sessionStorage.getItem('key'));
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-100.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-102.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   function run() {
+    sessionStorage.setItem('sessionValue',a.value);
+    out.textContent='Saved for this tab.'
+}
+function readSession() {
+    out.textContent='Stored: '+(sessionStorage.getItem('sessionValue')||'Nothing saved')
+}
+  </script>
+ </body>
+</html>

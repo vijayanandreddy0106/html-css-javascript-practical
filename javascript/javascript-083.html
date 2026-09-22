@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 83
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 83
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 83
+    </span>
+    <h2 class="page-title">
+     Demonstrate form events such as submit, change, focus, and blur.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <form id="evForm">
+      <input class="input" id="a" placeholder="Type"/>
+      <select class="input" id="b">
+       <option>
+        A
+       </option>
+       <option>
+        B
+       </option>
+      </select>
+      <button class="btn">
+       Submit
+      </button>
+     </form>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+form.addEventListener('submit',e=&gt;e.preventDefault());
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-082.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-084.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   a.onfocus=()=>out.textContent='Input focused';
+a.onblur=()=>out.textContent='Input lost focus';
+b.onchange=()=>out.textContent='Selection changed';
+evForm.onsubmit=e=> {
+    e.preventDefault();
+    out.textContent='Form submitted without reload'
+};
+  </script>
+ </body>
+</html>

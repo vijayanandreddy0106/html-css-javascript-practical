@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 40
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 40
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 40
+    </span>
+    <h2 class="page-title">
+     Demonstrate callbacks, promises, and async/await.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <button class="btn" onclick="run()">
+      Run Async Demo
+     </button>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+function callback(fn) {
+    fn();
+}
+const promise=Promise.resolve('Done');
+async function run() {
+    console.log(await promise)
+}
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-039.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-041.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   async function run() {
+    function callback(fn) {
+        fn('Callback done')
+    }
+    const promise=new Promise(r=>setTimeout(()=>r('Promise resolved'),300));
+    callback(x=>out.textContent=x);
+    out.textContent+='\nWaiting...';
+    let x=await promise;
+    out.textContent+='\n'+x+'\nAsync/Await done'
+}
+  </script>
+ </body>
+</html>

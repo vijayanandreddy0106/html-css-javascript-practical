@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 79
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 79
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 79
+    </span>
+    <h2 class="page-title">
+     Create a dependent dropdown such as Country &rarr; State &rarr; City.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <div class="demo-grid">
+      <select class="input" id="country">
+       <option>
+        India
+       </option>
+       <option>
+        USA
+       </option>
+      </select>
+      <select class="input" id="state">
+      </select>
+      <select class="input" id="city">
+      </select>
+     </div>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+const data= {
+    India:['Andhra Pradesh','Tamil Nadu']
+};
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-078.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-080.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   const data= {
+    India: {
+        Andhra:['Nandyal','Vijayawada'],TamilNadu:['Chennai','Coimbatore']
+    },USA: {
+        California:['Los Angeles','San Diego'],Texas:['Dallas','Austin']
+    }
+};
+function load() {
+    state.innerHTML='';
+    Object.keys(data[country.value]).forEach(x=>state.add(new Option(x,x)));
+    loadCities()
+}
+function loadCities() {
+    city.innerHTML='';
+    (data[country.value][state.value]||[]).forEach(x=>city.add(new Option(x,x)))
+}
+country.onchange=load;
+state.onchange=loadCities;
+load();
+  </script>
+ </body>
+</html>

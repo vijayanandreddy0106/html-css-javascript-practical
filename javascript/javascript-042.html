@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 42
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 42
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 42
+    </span>
+    <h2 class="page-title">
+     Display API data dynamically on a webpage.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <button class="btn" onclick="run()">
+      Fetch Sample Data
+     </button>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+fetch('https://jsonplaceholder.typicode.com/todos/1').then(r=&gt;r.json()).then(data=&gt;console.log(data));
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-041.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-043.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   async function run() {
+    out.textContent='Loading...';
+    try {
+        let r=await fetch('https://jsonplaceholder.typicode.com/todos/1');
+        let d=await r.json();
+        out.textContent=JSON.stringify(d,null,2)
+    }
+    catch(e) {
+        out.textContent='API unavailable. Check your internet connection.'
+    }
+}
+  </script>
+ </body>
+</html>

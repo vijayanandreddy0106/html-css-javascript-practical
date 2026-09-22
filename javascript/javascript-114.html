@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 114
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 114
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 114
+    </span>
+    <h2 class="page-title">
+     Create a student marks/grade calculator.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <div class="demo-grid">
+      <input class="input" id="m1" placeholder="Subject 1" type="number" value=""/>
+      <input class="input" id="m2" placeholder="Subject 2" type="number" value=""/>
+      <input class="input" id="m3" placeholder="Subject 3" type="number" value=""/>
+     </div>
+     <button class="btn" onclick="run()">
+      Calculate Grade
+     </button>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+const avg=(80+75+90)/3;
+console.log(avg);
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-113.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-115.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   function run() {
+    let m=[+m1.value,+m2.value,+m3.value];
+    if(m.some(x=>x<0||x>100)) {
+        out.textContent='Enter marks from 0 to 100';
+        return
+    }
+    let avg=m.reduce((a,b)=>a+b,0)/3;
+    let g=avg>=90?'A+':avg>=80?'A':avg>=70?'B':avg>=60?'C':avg>=50?'D':'F';
+    out.textContent=`Average: ${avg.toFixed(2)}\nGrade: ${g}`
+}
+  </script>
+ </body>
+</html>

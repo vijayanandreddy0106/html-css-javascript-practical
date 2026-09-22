@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 102
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 102
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 102
+    </span>
+    <h2 class="page-title">
+     Create a shopping cart using localStorage.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <div class="demo-grid">
+      <input class="input" id="a" placeholder="Product name" type="text" value="Notebook"/>
+      <input class="input" id="b" placeholder="Price" type="number" value="100"/>
+     </div>
+     <button class="btn" onclick="run()">
+      Add to Cart
+     </button>
+     <ul id="cart">
+     </ul>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+const cart=[];
+cart.push( {
+    name:'Notebook',price:100
+}
+);
+localStorage.setItem('cart',JSON.stringify(cart));
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-101.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-103.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   let cartItems=JSON.parse(localStorage.getItem('cartItems')||'[]');
+function render() {
+    cart.innerHTML='';
+    cartItems.forEach((x,i)=> {
+        let li=document.createElement('li');
+        li.textContent=x.name+' - ₹'+x.price+' ';
+        let b=document.createElement('button');
+        b.className='btn';
+        b.textContent='Remove';
+        b.onclick=()=> {
+            cartItems.splice(i,1);
+            save()
+        };
+        li.appendChild(b);
+        cart.appendChild(li)
+    }
+    );
+    out.textContent='Items: '+cartItems.length
+}
+function save() {
+    localStorage.setItem('cartItems',JSON.stringify(cartItems));
+    render()
+}
+function run() {
+    cartItems.push( {
+        name:a.value,price:+b.value
+    }
+    );
+    save();
+    a.value=''
+}
+render();
+  </script>
+ </body>
+</html>

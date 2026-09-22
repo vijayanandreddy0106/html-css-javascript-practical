@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 87
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 87
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 87
+    </span>
+    <h2 class="page-title">
+     Create a keyboard-controlled webpage/game.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <div class="click-box" id="player" style="width:90px">
+      😀
+     </div>
+     <p>
+      Use &larr; &uarr; &rarr; &darr; keys
+     </p>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+document.addEventListener('keydown',movePlayer);
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-086.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-088.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   let x=0,y=0;
+document.addEventListener('keydown',e=> {
+    if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) {
+        if(e.key==='ArrowLeft')x-=10;
+        if(e.key==='ArrowRight')x+=10;
+        if(e.key==='ArrowUp')y-=10;
+        if(e.key==='ArrowDown')y+=10;
+        player.style.transform=`translate(${x}px,${y}px)`;
+        out.textContent=`Position: ${x}, ${y}`
+    }
+}
+);
+  </script>
+ </body>
+</html>

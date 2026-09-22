@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 75
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 75
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 75
+    </span>
+    <h2 class="page-title">
+     Create a program to search/filter table records.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <input class="input" id="a" placeholder="Search name" type="text" value=""/>
+     <table id="tbl">
+      <tr>
+       <th>
+        Name
+       </th>
+       <th>
+        Course
+       </th>
+      </tr>
+      <tr>
+       <td>
+        Vijay
+       </td>
+       <td>
+        CDS
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Kiran
+       </td>
+       <td>
+        AI
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Rahul
+       </td>
+       <td>
+        CS
+       </td>
+      </tr>
+     </table>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+const rows=[...document.querySelectorAll('tr')];
+console.log(rows.filter(r=&gt;r.textContent.includes('Vijay')));
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-074.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-076.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   a.addEventListener('input',()=> {
+    let q=a.value.toLowerCase();
+    document.querySelectorAll('#tbl tr:not(:first-child)').forEach(r=>r.style.display=r.textContent.toLowerCase().includes(q)?'':'none')
+}
+);
+  </script>
+ </body>
+</html>

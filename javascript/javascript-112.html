@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 112
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 112
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 112
+    </span>
+    <h2 class="page-title">
+     Create a tic-tac-toe game.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <div class="game-grid" id="board">
+      <button onclick="play(0)">
+      </button>
+      <button onclick="play(1)">
+      </button>
+      <button onclick="play(2)">
+      </button>
+      <button onclick="play(3)">
+      </button>
+      <button onclick="play(4)">
+      </button>
+      <button onclick="play(5)">
+      </button>
+      <button onclick="play(6)">
+      </button>
+      <button onclick="play(7)">
+      </button>
+      <button onclick="play(8)">
+      </button>
+     </div>
+     <button class="btn" onclick="resetGame()">
+      Reset
+     </button>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+let board=Array(9).fill('');
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-111.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-113.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   let turn='X',cells=Array(9).fill('');
+const wins=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+function play(i) {
+    if(cells[i]||wins.some(w=>w.every(x=>cells[x]===turn)))return;
+    cells[i]=turn;
+    document.querySelectorAll('#board button')[i].textContent=turn;
+    let win=wins.some(w=>w.every(x=>cells[x]===turn));
+    if(win) {
+        out.textContent=turn+' wins!';
+        return
+    }
+    if(cells.every(Boolean)) {
+        out.textContent='Draw!';
+        return
+    }
+    turn=turn==='X'?'O':'X';
+    out.textContent='Turn: '+turn
+}
+function resetGame() {
+    cells=Array(9).fill('');
+    turn='X';
+    document.querySelectorAll('#board button').forEach(b=>b.textContent='');
+    out.textContent='Turn: X'
+}
+  </script>
+ </body>
+</html>

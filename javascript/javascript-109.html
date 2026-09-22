@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 109
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 109
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 109
+    </span>
+    <h2 class="page-title">
+     Create a weather application using an API.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <input class="input" id="a" placeholder="City" type="text" value="Chennai"/>
+     <button class="btn" onclick="run()">
+      Get Weather
+     </button>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+fetch('https://api.open-meteo.com/v1/forecast?...').then(r=&gt;r.json()).then(console.log);
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-108.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-110.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   async function run() {
+    out.textContent='Loading...';
+    try {
+        let city=encodeURIComponent(a.value);
+        let r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`);
+        let g=await r.json();
+        if(!g.results?.length) {
+            out.textContent='City not found';
+            return
+        }
+        let x=g.results[0];
+        let w=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${x.latitude}&longitude=${x.longitude}&current=temperature_2m,wind_speed_10m`);
+        let d=await w.json();
+        out.textContent=`${x.name}: ${d.current.temperature_2m}°C\nWind: ${d.current.wind_speed_10m} km/h`
+    }
+    catch(e) {
+        out.textContent='Weather API unavailable. Check internet.'
+    }
+}
+  </script>
+ </body>
+</html>

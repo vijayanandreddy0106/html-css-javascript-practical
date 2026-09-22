@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript Program 80
+  </title>
+  <link href="../assets/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="top">
+   <h1>
+    JavaScript Program 80
+   </h1>
+   <p>
+    Practical Programs Collection
+   </p>
+  </header>
+  <nav class="nav">
+   <a class="btn" href="../index.html">
+    Home
+   </a>
+   <a class="btn" href="../html/index.html">
+    HTML
+   </a>
+   <a class="btn" href="../css/index.html">
+    CSS
+   </a>
+   <a class="btn active" href="index.html">
+    JavaScript
+   </a>
+   <a class="btn" href="../README.html">
+    README
+   </a>
+  </nav>
+  <main class="wrap">
+   <div class="card">
+    <span class="num">
+     Program 80
+    </span>
+    <h2 class="page-title">
+     Create an image slideshow/carousel using JavaScript.
+    </h2>
+    <p class="hint">
+     Try the program below. Change the input values and click Run.
+    </p>
+    <div class="demo">
+     <img class="gallery-img" id="slide" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='250'%3E%3Crect width='100%' height='100%' fill='%23174EA6'/%3E%3Ctext x='50%' y='50%' fill='white' text-anchor='middle' font-size='34'%3ESlide 1%3C/text%3E%3C/svg%3E"/>
+     <button class="btn" onclick="nextSlide()">
+      Next Slide
+     </button>
+     <div class="output" id="out">
+      Output appears here...
+     </div>
+    </div>
+    <h3>
+     Program Code
+    </h3>
+    <textarea class="code" readonly="">
+let index=0;
+images[index].style.display='block';
+</textarea>
+   </div>
+   <div class="program-actions">
+    <a class="btn" href="javascript-079.html">
+     &larr; Previous
+    </a>
+    <a class="btn" href="index.html">
+     Home
+    </a>
+    <a class="btn" href="javascript-081.html">
+     Next &rarr;
+    </a>
+   </div>
+  </main>
+  <footer>
+   HTML &bull; CSS &bull; JavaScript Practical Programs
+  </footer>
+  <script>
+   let slideNo=1;
+function nextSlide() {
+    slideNo=slideNo%3+1;
+    slide.src=`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='250'%3E%3Crect width='100%25' height='100%25' fill='%230B5394'/%3E%3Ctext x='50%25' y='50%25' fill='white' text-anchor='middle' font-size='34'%3ESlide ${slideNo}%3C/text%3E%3C/svg%3E`;
+    out.textContent='Slide '+slideNo
+}
+  </script>
+ </body>
+</html>
